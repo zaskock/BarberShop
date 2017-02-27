@@ -9,7 +9,7 @@ class CreateClients < ActiveRecord::Migration
 		t.text :color
 #creates fields 'created_at' & 'ipdated_at' in the table
 		t.timestamps
-	end
+		end
 
 	end
 end
