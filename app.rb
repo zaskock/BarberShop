@@ -11,7 +11,26 @@ end
 class Barber<ActiveRecord::Base
 end
 
-get '/' do
+before do
 	@barbers = Barber.all
+end
+
+get '/' do
 	erb :index
+end
+
+get '/visit' do
+	@title = '22 - Barber Shop - Visit Us!'
+	erb :visit
+end
+
+post '/visit' do
+#saving form fields returned values to global variables
+	@barber = params[:barber]
+	@username = params[:username]
+	@phone = params[:phone]
+	@datetime = params[:datetime]
+	@colour = params[:colour]
+
+	erb "Dear #{@username}, we'll be waiting for you at #{@datetime}"
 end
