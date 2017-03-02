@@ -10,6 +10,8 @@ class Client<ActiveRecord::Base
 end
 class Barber<ActiveRecord::Base
 end
+class Contact<ActiveRecord::Base
+end
 
 before do
 	@barbers = Barber.all
@@ -31,6 +33,14 @@ post '/visit' do
 	@phone = params[:phone]
 	@datetime = params[:datetime]
 	@colour = params[:colour]
+
+	c=Client.new
+	c.name = @username
+	c.phone = @phone
+	c.datestamp = @datetime
+	c.barber = @barber
+	c.color = @colour
+	c.save()
 
 	erb "Dear #{@username}, we'll be waiting for you at #{@datetime}"
 end
