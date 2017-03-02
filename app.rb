@@ -27,20 +27,9 @@ get '/visit' do
 end
 
 post '/visit' do
-#saving form fields returned values to global variables
-	@barber = params[:barber]
-	@username = params[:username]
-	@phone = params[:phone]
-	@datetime = params[:datetime]
-	@colour = params[:colour]
 
-	c=Client.new
-	c.name = @username
-	c.phone = @phone
-	c.datestamp = @datetime
-	c.barber = @barber
-	c.color = @colour
-	c.save()
+	c=Client.new params[:client]
+	c.save
 
 	erb "Dear #{@username}, we'll be waiting for you at #{@datetime}"
 end

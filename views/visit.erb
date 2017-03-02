@@ -16,17 +16,17 @@ $('#colour').simplecolorpicker();
 
   <div class="form-group">
     <label>Ваше имя</label>
-    <input name="username" type="text" class="form-control" value="<%=@username%>" placeholder="Ваше имя">
+    <input name="client[name]" type="text" class="form-control" value="" placeholder="Ваше имя">
   </div>
 
   <div class="form-group">
     <label>Ваш телефон</label>
-    <input name="phone" type="text" class="form-control" value="<%=@phone%>" placeholder="Ваш телефон">
+    <input name="client[phone]" type="text" class="form-control" value=""placeholder="Ваш телефон">
   </div>
 
   <div class="form-group">
     <label>У кого стрижёмся?</label>
-    <select name="barber" class="form-control" required form="visit form" size="1">
+    <select name="client[barber]" class="form-control" required form="visit form" size="1">
  <!-- 	 <option <%= @barber=='Walter White' ? 'selected' : '' %>>Walter White</option> -->
  <!--<option <%= @barber=='Jessie Pinkman' ? 'selected' : '' %>>Jessie Pinkman</option> -->
 <!--<option <%= @barber=='Gus Fring' ? 'selected' : '' %>>Gus Fring</option> -->
@@ -40,9 +40,9 @@ $('#colour').simplecolorpicker();
   
   <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input name="datetime" id="datetimepicker" type="text" class="form-control" value="<%=@datetime%>" placeholder="Введите дату и время">    
+    <input name="client[datestamp]" id="datetimepicker" type="text" class="form-control" value="" placeholder="Введите дату и время">    
 	<label>В какие цвета вы хотите себя окрасить?</label></br>
-    <select id="colour" name="colour">
+    <select id="colour" name="client[color]">
   <option value="#7bd148">Green</option>
   <option value="#5484ed">Bold blue</option>
   <option value="#a4bdfc">Blue</option>
