@@ -36,7 +36,10 @@ end
 post '/visit' do
 
 	c=Client.new params[:client]
-	c.save
-
-	erb "Dear #{c[:name]}, we'll be waiting for you at #{c[:datestamp]}"
+	
+	if c.save
+		erb "Dear #{c[:name]}, we'll be waiting for you at #{c[:datestamp]}"
+	else
+		erb "An error occurred, the record has not been saved to database!"
+	end
 end
