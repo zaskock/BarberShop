@@ -29,17 +29,23 @@ get '/' do
 end
 
 get '/visit' do
-	@title = '22 - Barber Shop - Visit Us!'
+	@title = 'Barber Shop - Visit Us!'
+	@c=Client.new
 	erb :visit
+	
 end
 
 post '/visit' do
 
-	c=Client.new params[:client]
+	@c=Client.new params[:client]
 	
-	if c.save
-		erb "Dear #{c[:name]}, we'll be waiting for you at #{c[:datestamp]}"
+	
+	if @c.save
+		erb "Dear #{@c[:name]}, we'll be waiting for you at #{@c[:datestamp]}"
 	else
+		@error = @c.errors.full_messages.first
+		
 		erb "An error occurred, the record has not been saved to database!"
+		erb :visit
 	end
 end
