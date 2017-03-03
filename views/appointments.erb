@@ -1,0 +1,10 @@
+<h3>
+	List of appointments
+</h3>
+<%@clients.each do |client|%>
+	</p>
+		<a href="/client/<%= client.id%>">
+			<%= client.name%> - <%= client.datestamp%>
+		</a>
+	</p>
+<%end%>
