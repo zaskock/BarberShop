@@ -59,3 +59,8 @@ get '/appointments' do
 	@clients = Client.order('created_at DESC')
 	erb :appointments
 end
+
+get '/client/:id' do
+	@client= Client.find (params[:id])
+	erb :client
+	end
