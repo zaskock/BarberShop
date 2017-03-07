@@ -34,7 +34,6 @@ get '/' do
 end
 
 get '/visit' do
-	@title = 'Barber Shop - Visit Us!'
 	@c=Client.new
 	erb :visit
 	

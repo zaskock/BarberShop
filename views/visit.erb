@@ -1,3 +1,4 @@
+<%@title="Visit Us! - BarberShop" %>
 <script type="text/javascript">
 	$(function() {$('#datetimepicker').datetimepicker();});
 	$(function() {$('#colour').simplecolorpicker();});
@@ -11,12 +12,12 @@
 
 	<div class="form-group">
 		<label>Your name:</label>
-		<input name="client[name]" type="text" class="form-control" value="<%=@c.name%>" placeholder="Ваше имя">
+		<input name="client[name]" type="text" class="form-control" value="<%=@c.name%>" placeholder="Your name">
 	</div>
 
 	<div class="form-group">
 		<label>Phone:</label>
-		<input name="client[phone]" type="text" class="form-control" value="<%=@c.phone%>"placeholder="Ваш телефон">
+		<input name="client[phone]" type="text" class="form-control" value="<%=@c.phone%>"placeholder="Your phone">
 	</div>
 
 	<div class="form-group">
@@ -34,7 +35,7 @@
 
 	<div class="form-group">
 		<label>When should we be waiting for you?</label>
-		<input name="client[datestamp]" id="datetimepicker" type="text" class="form-control" value="<%=@c.datestamp%>" placeholder="Введите дату и время">
+		<input name="client[datestamp]" id="datetimepicker" type="text" class="form-control" value="<%=@c.datestamp%>" placeholder="Enter date and time">
 		<label>What colour should be used for dyeing?</label>
 		</br>
 		<select id="colour" name="client[color]">
