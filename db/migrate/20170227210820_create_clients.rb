@@ -7,7 +7,7 @@ class CreateClients < ActiveRecord::Migration
 		t.text :datestamp
 		t.text :barber
 		t.text :color
-#creates fields 'created_at' & 'ipdated_at' in the table
+#creates fields 'created_at' & 'updated_at' in the table
 		t.timestamps
 		end
 
