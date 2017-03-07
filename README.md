@@ -1,5 +1,5 @@
 #####It's about learning Ruby and it's gems to build some basic web-site with simple functionality.
-
+Project is based on Sinatra and Active Record and represents a fairy-tale barbershop
 
 ####Gems Used:
 - "sinatra"
