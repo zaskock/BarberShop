@@ -1,5 +1,16 @@
-<h3>Contacts</h3>
+<h3>Contacts:</h3>
 </br>
+<%@contacts.each do |contact|%>
+	<p>
+		<b>Name:</b> <%= contact.name%></br>
+		<%= (contact.email).length>0 ? "<b>E-mail:</b> #{contact.email}</br>" : ''%>
+		<b>Phone:</b> <%= contact.phone%></br>
+		<%= (contact.email).length>0 ? "<b>Fax:</b> #{contact.fax}</br>" : ''%>
+		<b>Available from</b> <%= contact.time_from%> <b>to </b><%= contact.time_to%> 
+	</p>
+<hr>
+<%end%>
+
 <p>You can enter new contact data here:</p>
 
 <form id="visit form" action="/contacts" method="POST" role="form">

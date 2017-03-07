@@ -26,6 +26,7 @@ end
 
 before do
 	@barbers = Barber.all
+	@contacts = Contact.all
 end
 
 get '/' do
