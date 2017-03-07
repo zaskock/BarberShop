@@ -16,7 +16,12 @@ end
 
 class Barber<ActiveRecord::Base
 end
+
 class Contact<ActiveRecord::Base
+	validates :name, presence: true, length: {minimum: 3}
+	validates :phone, presence: true, length: {minimum: 10}
+	validates :time_from, presence: true
+	validates :time_to, presence: true
 end
 
 before do
@@ -41,9 +46,28 @@ post '/visit' do
 	if @c.save
 		erb "Dear #{@c[:name]}, we'll be waiting for you at #{@c[:datestamp]}"
 	else
-		@error = @c.errors.full_messages.first
-		erb "An error occurred, the record has not been saved to database!"
+		@error = "An error occurred, the record has not been saved to database! </br>Details: "+@c.errors.full_messages.first
 		erb :visit
+	end
+
+	end
+
+get '/contacts' do
+	@title = 'Barber Shop - Add a contact'
+	@con=Contact.new
+	erb :contacts
+	
+end
+
+post '/contacts' do
+
+	@con=Contact.new params[:contact]
+
+	if @con.save
+		erb "Thank you #{@con[:name]}, your contact data was saved successfully!"
+	else
+		@error = "An error occurred, the record has not been saved to database! </br>Details: "+@con.errors.full_messages.first
+		erb :contacts
 	end
 
 	end
